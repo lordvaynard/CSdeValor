@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 import base64
 import datetime
-from datetime import 
 
 def filedownloadcsv(df, season, league):
     csv = df.to_csv(index=False)
