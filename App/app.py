@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import base64
 import datetime
+from datetime import date
 
 def filedownloadcsv(df, season, league):
     csv = df.to_csv(index=False)
@@ -51,6 +52,8 @@ st.subheader("Dataframe: "+selected_league)
 st.dataframe(df)
 
 st.markdown(filedownloadcsv(df, selected_season, selected_league), unsafe_allow_html=True)
+
+
 
 st.title("Jogos do Dia")
 
