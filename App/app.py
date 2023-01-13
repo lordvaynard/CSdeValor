@@ -70,10 +70,10 @@ df_jogos = load_data_jogos()
 
 st.dataframe(df_jogos)
 
-def filedownload(df, dia):
+def filedownload(df):
     csv = df.to_csv(index=False)
     b64 = base64.b64encode(csv.encode()).decode()
-    href = f'<a href="data:file/csv;base64,{b64}" download="Jogos_do_dia-'+str(dia)+'.csv">Download CSV File</a>'
+    href = f'<a href="data:file/csv;base64,{b64}" download="Jogos_do_dia.csv">Download CSV File</a>'
     return href
 
-st.markdown(filedownload(df_jogos, dia), unsafe_allow_html=True)
+st.markdown(filedownload(df_jogos), unsafe_allow_html=True)
