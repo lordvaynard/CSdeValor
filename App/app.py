@@ -71,7 +71,7 @@ df_jogos = load_data_jogos()
 st.dataframe(df_jogos)
 
 def filedownload(df):
-    csv = df.to_csv(index=False)
+    csv = df.to_csv(decimal=',',sep=';',index=False)
     b64 = base64.b64encode(csv.encode()).decode()
     href = f'<a href="data:file/csv;base64,{b64}" download="Jogos_do_dia.csv">Download CSV File</a>'
     return href
